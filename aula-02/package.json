@@ -1,0 +1,15 @@
+{
+  "name": "aula-02",
+  "version": "1.0.0",
+  "description": "Na aula anterior, criamos o nosso servidor utilizando o Express. Nele criamos algumas rotas. Observe que as duas rotas iniciavam sua implementação com `app.get()`. Isso porque ambas as rotas eram para leitura de dados apenas.",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "author": "",
+  "license": "ISC"
+}

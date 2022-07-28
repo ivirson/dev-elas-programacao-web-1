@@ -1,0 +1,26 @@
+[
+    {
+        "uuid": "3fa48176-e014-11ec-9d64-0242ac120002",
+        "name": "Carolina",
+        "idade": 36,
+        "username": "carol",
+        "senha": "kitkat",
+        "email": "carol@mail.com"
+    },
+    {
+        "uuid": "3fa48176-e014-11ec-9d64-0242ac120003",
+        "name": "Isabella",
+        "idade": 25,
+        "username": "isabela",
+        "senha": "kitkat",
+        "email": "isabela@mail.com"
+    },
+    {
+        "uuid": "3fa48176-e014-11ec-9d64-0242ac120003",
+        "nome": "Tatiane",
+        "idade": 41,
+        "username": "tatiaraujo",
+        "senha": "123mudar",
+        "email": "tatianearaujo1981@gmail.com"
+    }
+]
