@@ -57,6 +57,42 @@ app.delete('/alunos/:id', (req, res) => {
   res.json({ successMessage: "Aluna excluída com sucesso!" });
 });
 
+// Altera todo o objeto
+app.put("/alunos/:id", (req, res) => {
+  const id = req.params.id;
+
+  const index = alunos.findIndex(aluno => aluno.uuid === id);
+
+  if (index === -1) {
+    return res.status(404).json({ errormessage: "Aluna não encontrada." });
+  }
+
+  const { name, email, senha, idade, username, id: uuid } = req.body;
+
+  if (!name || !email || !senha || !idade || !username || !id) {
+    return res.status(402).json({ errormessage: "Alguns campos obrigatórios não foram enviados." });
+  }
+
+  alunos[ index ] = req.body;
+
+  res.json(alunos[ index ]);
+});
+
+// Altera apenas as informaçoes passadas
+app.patch("/alunos/:id", (req, res) => {
+  const id = req.params.id;
+
+  const index = alunos.findIndex(aluno => aluno.uuid === id);
+
+  if (index === -1) {
+    return res.status(404).json({ errormessage: "Aluna não encontrada." });
+  }
+  
+  alunos[ index ] = { ...alunos[ index ], ...req.body };
+
+  res.json(alunos[ index ]);
+});
+
 app.listen(port, () => {
     console.log(`Server running is ${port}`)
 });
