@@ -1,0 +1,1 @@
+var nome = prompt("Escreva seu nome")
