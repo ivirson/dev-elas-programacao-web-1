@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <%- include("_header") %> 
+  </header>
+
+  <main class="conteudo">
+    <h2><%= title %></h2>
+    <p>
+      Proin sit amet urna non metus tincidunt dictum sed id nisl. Cras vel
+      imperdiet metus. Morbi finibus, ligula eget scelerisque commodo, felis
+      nulla porta leo, id auctor nibh odio id ligula. Sed felis erat, blandit
+      pharetra semper at, rhoncus euismod neque. Cras ut velit tincidunt,
+      lobortis mauris ut, varius elit.
+    </p>
+  </main>
+
+  <footer class="footer">
+    <p>&copy;2022 Todos os direitos reservados</p>
+  </footer>
+</body>
+</html>
