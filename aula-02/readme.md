@@ -1,4 +1,4 @@
-# Módulo 10 - Programação Web I - Aula 02
+# Módulo 06 - Programação Web I - Aula 02
 
 Na aula anterior, criamos o nosso servidor utilizando o Express. Nele criamos algumas rotas. Observe que as duas rotas iniciavam sua implementação com `app.get()`. Isso porque ambas as rotas eram para leitura de dados apenas.
 
