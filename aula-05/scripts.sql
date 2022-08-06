@@ -14,4 +14,4 @@ SELECT * FROM alunas;
 INSERT INTO alunas (name, username, senha, email) 
 VALUES ('Carolina', 'carolina', 'carolina@123', 'carolina@email.com');
 
-UPDATE alunas SET idade = 36 WHERE id = 1
+UPDATE alunas SET idade = 36 WHERE id = 10

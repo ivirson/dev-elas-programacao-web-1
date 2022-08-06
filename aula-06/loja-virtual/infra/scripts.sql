@@ -39,3 +39,5 @@ VALUES ('Kit O Boticário', 'kitbeleza.jpg', 455.00, 2, 3);
 
 SELECT * FROM categories;
 SELECT * FROM products;
+
+SELECT * FROM products WHERE categoryId = 3;

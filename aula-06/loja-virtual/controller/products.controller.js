@@ -21,3 +21,14 @@ exports.getProductById = (req, res) => {
     res.render("index", { product: row, role: "detail" });
   })
 }
+
+exports.getProductByCategoryId = (req, res) => {
+  const categoryId = req.params.id;
+  productsDAO.findbyCategoryId(categoryId, (err, rows) => {
+    if (err) {
+      return res.json({ message: "Houve um erro ao consultar os dados", err });
+    }
+
+    res.render("index", { products: rows, role: "products" });
+  })
+}

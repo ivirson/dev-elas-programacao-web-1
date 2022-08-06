@@ -5,11 +5,33 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <h1>Produtos</h1>
+
+  <% if (role === "index") { %>
+    <h1>Categorias</h1>
+    <section id="categories">
+      <div class="row">
+        <% categories.forEach(category => { %>
+          <div class="col-4">
+            <div class="card">
+              <img src="/images/<%= category.image %>" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><%= category.name %></h5>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </section>
+  <% } %> 
 
   <% if (role === "products") { %>
+    <h1>Produtos</h1>
     <section id="products">
       <% products.forEach(product => { %>
         <h2><%= product.name %></h2>
