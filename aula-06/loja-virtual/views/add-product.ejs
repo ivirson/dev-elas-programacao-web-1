@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("_head") %>
+</head>
+<body>
+
+  <%- include("_header") %> 
+
+  <div class="container">
+
+    <!-- FORMULÁRIO HTML -->
+    <form action="/save-product" method="post" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="name" class="form-label">Nome</label>
+        <input type="text" class="form-control" name="name" aria-describedby="nome do produto" required>
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Imagem</label>
+        <input type="file" multiple="true" class="form-control" name="image" aria-describedby="imagem do produto" accept="image/*" required>
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">Preço</label>
+        <input type="text" class="form-control" name="price" aria-describedby="preço do produto" required>
+      </div>
+      <div class="mb-3">
+        <label for="categoryId" class="form-label">Categoria</label>
+        <select class="form-select" name="categoryId" aria-label="Selecionar a categoria do produto">
+          <option selected>- Selecione a categoria</option>
+          <% categories.forEach(category => { %>
+            <option value="<%= category.id %>"><%= category.name %></option>
+          <% }) %> 
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+
+  </div>
+  
+</body>
+</html>

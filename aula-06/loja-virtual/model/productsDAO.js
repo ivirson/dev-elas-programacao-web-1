@@ -14,6 +14,16 @@ class ProductsDAO {
   findbyCategoryId(categoryId, callback) {
     this.db.all(`SELECT * FROM products WHERE categoryId = ?`, categoryId, callback);
   }
+
+  saveProduct(product, callback) {
+    const { name, price, image, categoryId } = product;
+    this.db.run(
+      `INSERT INTO products (name, image, price, categoryId) 
+       VALUES (?, ?, ?, ?)`,
+      [ name, image, price, categoryId ],
+      callback
+    );
+  }
 }
 
 module.exports = (conn) => {
