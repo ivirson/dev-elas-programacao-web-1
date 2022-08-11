@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("_head") %>
+  </head>
+  <body>
+    <%- include("_header") %>
+
+    <div class="container">
+      <% if (role === "index") { %>
+      <h1>Categorias</h1>
+      <section id="categories">
+        <div class="row">
+          <% categories.forEach(category => { %>
+          <div class="col-3">
+            <a href="/category/<%= category.id %>/products">
+              <div class="card">
+                <img
+                  src="/images/<%= category.image %>"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title"><%= category.name %></h5>
+                </div>
+              </div>
+            </a>
+          </div>
+          <% }); %>
+        </div>
+      </section>
+      <% } %> <% if (role === "products") { %>
+      <h1>Produtos</h1>
+      <section id="products">
+        <div class="row">
+          <% products.forEach(product => { %>
+
+          <div class="col-3">
+            <div class="card">
+              <img
+                src="/images/<%= product.image %>"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title"><%= product.name %></h5>
+                <p><%= product.price %></p>
+
+                <div class="row">
+                  <div class="col-6">
+                    <a
+                      href="/edit-product/<%= product.id %>"
+                      class="btn btn-outline-primary"
+                      >Editar</a
+                    >
+                  </div>
+                  <div class="col-6">
+                    <!-- Button trigger modal -->
+                    <button
+                      type="button"
+                      class="btn btn-outline-danger"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                    >
+                      Excluir
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Deseja mesmo excluir o produto?
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">Esta é uma ação irreversível.</div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Cancelar
+                  </button>
+                  <a
+                    href="/delete-product/<%= product.id %>"
+                    class="btn btn-outline-danger"
+                    >Excluir</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <% }); %>
+        </div>
+      </section>
+      <% } %> <% if (role === "detail") { %>
+      <section id="detail">
+        <h2><%= product.name %></h2>
+        <p><%= product.price %></p>
+      </section>
+      <% } %>
+    </div>
+  </body>
+</html>

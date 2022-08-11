@@ -41,3 +41,5 @@ SELECT * FROM categories;
 SELECT * FROM products;
 
 SELECT * FROM products WHERE categoryId = 3;
+
+DELETE FROM products WHERE id = 6;
